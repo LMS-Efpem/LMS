@@ -1,0 +1,135 @@
+CRITICAL - 2023-09-15 00:42:00 --> Invalid file: "button.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('button.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('button', [], true)
+ 3 APPPATH\Controllers\Component.php(9): view('button')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Component->button()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Component))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-15 00:43:51 --> Invalid file: "button.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('button.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('button', [], true)
+ 3 APPPATH\Controllers\Component.php(9): view('button')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Component->button()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Component))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-15 00:59:58 --> Invalid file: "button.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('button.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('button', [], true)
+ 3 APPPATH\Controllers\Component.php(9): view('button')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Component->button()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Component))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-15 01:00:14 --> Invalid file: "button.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('button.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('button', [], true)
+ 3 APPPATH\Controllers\Component.php(9): view('button')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Component->button()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Component))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-15 01:00:15 --> Invalid file: "button.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('button.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('button', [], true)
+ 3 APPPATH\Controllers\Component.php(9): view('button')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Component->button()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Component))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-15 01:00:31 --> Invalid file: "button.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('button.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('button', [], true)
+ 3 APPPATH\Controllers\Component.php(9): view('button')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Component->button()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Component))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-15 01:00:32 --> Invalid file: "button.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('button.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('button', [], true)
+ 3 APPPATH\Controllers\Component.php(9): view('button')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Component->button()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Component))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-15 01:02:30 --> Invalid file: "button.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('button.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('button', [], true)
+ 3 APPPATH\Controllers\Component.php(9): view('button')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Component->button()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Component))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-15 01:03:38 --> Invalid file: "button.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('button.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('button', [], true)
+ 3 APPPATH\Controllers\Component.php(9): view('button')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Component->button()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Component))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-15 01:41:27 --> Invalid file: "button.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('button.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('button', [], true)
+ 3 APPPATH\Controllers\Component.php(9): view('button')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Component->button()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Component))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-15 01:45:12 --> Invalid file: "button.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('button.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('button', [], true)
+ 3 APPPATH\Controllers\Component.php(9): view('button')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Component->button()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Component))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-15 01:45:36 --> Invalid file: "button.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('button.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('button', [], true)
+ 3 APPPATH\Controllers\Component.php(9): view('button')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Component->button()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Component))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-15 01:45:51 --> Invalid file: "component/button.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('component/button.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('component/button', [], true)
+ 3 APPPATH\Controllers\Component.php(9): view('component/button')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Component->button()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Component))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-15 01:45:52 --> Invalid file: "component/button.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('component/button.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('component/button', [], true)
+ 3 APPPATH\Controllers\Component.php(9): view('component/button')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Component->button()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Component))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-15 01:56:36 --> Invalid file: "welcome_message.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('welcome_message.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('welcome_message', [], true)
+ 3 APPPATH\Controllers\Home.php(9): view('welcome_message')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home->index()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
