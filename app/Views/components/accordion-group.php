@@ -1,4 +1,8 @@
 <?php
+// Indica el grupo al que pertenecen los grados y secciones
+// ! debe obtenerse desde el modelo
+$group_grade = 'Básicos';
+
 $grades = [
   [
     'title' => 'Primero',
