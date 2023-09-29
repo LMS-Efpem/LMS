@@ -24,6 +24,10 @@ class Filters extends BaseConfig
         'honeypot'      => Honeypot::class,
         'invalidchars'  => InvalidChars::class,
         'secureheaders' => SecureHeaders::class,
+        'admin'         => \App\Filters\Session\Admin::class,
+        'parent'        => \App\Filters\Session\Parents::class,
+        'student'       => \App\Filters\Session\Student::class,
+        'teacher'       => \App\Filters\Session\Teacher::class,
     ];
 
     /**
@@ -66,5 +70,10 @@ class Filters extends BaseConfig
      * Example:
      * 'isLoggedIn' => ['before' => ['account/*', 'profiles/*']]
      */
-    public array $filters = [];
+    public array $filters = [
+        'admin'   => ['before' => ['a/*']],
+        'parent'  => ['before' => ['p/*']],
+        'student' => ['before' => ['s/*']],
+        'teacher' => ['before' => ['t/*']],
+    ];
 }
