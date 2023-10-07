@@ -9,11 +9,21 @@ use App\Models\Users\Teacher;
 
 class Auth extends BaseController
 {
+    public $header = 'templates/header';
+    public $footer = 'templates/footer';
+
     public function index()
     {
-        echo view('templates/header', ['title' => 'Inicio de Sesión']);
+        echo view($this->header, ['title' => 'Inicio de Sesión']);
         echo view('login', ['msg' => session('msg')]);
-        echo view('templates/footer');
+        echo view($this->footer);
+    }
+
+    public function recover()
+    {
+        echo view($this->header, ['title' => 'Recuperar Contraseña']);
+        echo view('recover');
+        echo view($this->footer);
     }
 
     public function login()
