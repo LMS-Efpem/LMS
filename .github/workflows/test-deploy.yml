@@ -32,6 +32,25 @@ jobs:
             Hello
             World
 
+      - name: Create .env 🤫
+        uses: DeveloperRic/action-create-env@v1.0.2
+        with:
+          full_text: |
+            PROD=1
+            PORT=3000
+            API_AUDIENCE=api.mydomain.xyz
+            CI_ENVIRONMENT = development
+            app.baseURL = 'https://urchin-app-u8sx2.ondigitalocean.app/'
+            app_baseURL = 'https://urchin-app-u8sx2.ondigitalocean.app/'
+            database.default.hostname = 24.199.106.12
+            database.default.database = efpem_lms
+            database.default.username = admin
+            ENCRYPTION_SALT = 37f92da155a27424f3ad
+
+          # Specify the directory that the .env file should go in.
+          # This defaults to the current directory (i.e. '.')
+          directory: './'
+
   build:
     runs-on: ubuntu-latest
 
