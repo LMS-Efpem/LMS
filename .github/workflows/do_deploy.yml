@@ -1,0 +1,45 @@
+name: Deploy site on DigitalOcean App Platform
+
+on:
+  push:
+    branches:
+      - deploy
+  workflow_dispatch:
+
+jobs:
+  create-envfile:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Make envfile
+        uses: SpicyPizza/create-envfile@v2.0
+        with:
+          CI_ENVIRONMENT: production
+          app.baseURL: "https://example.ondigitalocean.app/"
+          app_baseURL: "https://example.ondigitalocean.app/"
+
+          database.default.hostname: 24.199.106.12
+          database.default.database: efpem_lms
+          database.default.username: admin
+
+          ENCRYPTION_SALT: 37f92da155a27424f3ad
+
+      - uses: 1arp/create-a-file-action@0.3
+        with:
+          path: "./"
+          file: "foo.bar"
+          content: |
+            Hello
+            World
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: DigitalOcean App Platform deployment
+        uses: digitalocean/app_action@v1.1.5
+        with:
+          app_name: my_DO_app
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+
+      - uses: actions/checkout@v2
