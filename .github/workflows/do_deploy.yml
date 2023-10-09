@@ -36,10 +36,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: DigitalOcean App Platform deployment
-        uses: digitalocean/app_action@v1.1.5
+      - uses: jjst/action-digitalocean-deploy-app@v2
         with:
-          app_name: sea-turtle-app
           token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+          app-id: ${{ secrets.DIGITALOCEAN_APP_ID }}
+          app_name: sea-turtle-app
 
       - uses: actions/checkout@v2
