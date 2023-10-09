@@ -10,21 +10,22 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  create-envfile:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-
-      - name: Check if composer.json exists
-        id: check_files
-        uses: andstor/file-existence-action@v1
+      - name: Make envfile
+        uses: SpicyPizza/create-envfile@v2.0
         with:
-          files: "composer.json"
+          CI_ENVIRONMENT: development
+          app.baseURL: 'https://lobster-app-lq2l9.ondigitalocean.app/'
+          app_baseURL: 'https://lobster-app-lq2l9.ondigitalocean.app/'
 
-      - name: Run composer update
-        if: steps.check_files.outputs.files_exists == 'true'
-        run: composer update
+          database.default.hostname: 24.199.106.12
+          database.default.database: efpem_lms
+          database.default.username: admin
+
+          ENCRYPTION_SALT: 37f92da155a27424f3ad
 
       - uses: 1arp/create-a-file-action@0.3
         with:
@@ -34,12 +35,8 @@ jobs:
             Hello
             World
 
-      - name: Add .env file
-        run: |
-          touch .env
-          echo app.baseURL = 'http://localhost:8080' >> .env
-          echo app_baseURL = 'http://localhost:8080' >> .env
-          echo database.default.hostname = 24.199.106.12 >> .env
-          echo database.default.database = efpem_lms >> .env
-          echo database.default.username = admin >> .env
-          echo ENCRYPTION_SALT = 37f92da155a27424f3ad >> .env
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
