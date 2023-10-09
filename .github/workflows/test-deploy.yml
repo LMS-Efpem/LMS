@@ -1,0 +1,37 @@
+# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
+# More GitHub Actions for Azure: https://github.com/Azure/actions
+
+name: Deploy site
+
+on:
+  push:
+    branches:
+      - deploy
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Check if composer.json exists
+        id: check_files
+        uses: andstor/file-existence-action@v1
+        with:
+          files: 'composer.json'
+
+      - name: Run composer update
+        if: steps.check_files.outputs.files_exists == 'true'
+        run: composer update --no-interaction --no-progress
+
+      - name: Add .env file
+        run: |
+          touch .env
+          echo app.baseURL = 'http://localhost:8080' >> .env
+          echo app_baseURL = 'http://localhost:8080' >> .env
+          echo database.default.hostname = 24.199.106.12 >> .env
+          echo database.default.database = efpem_lms >> .env
+          echo database.default.username = admin >> .env
+          echo ENCRYPTION_SALT = 37f92da155a27424f3ad >> .env
