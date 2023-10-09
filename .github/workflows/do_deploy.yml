@@ -39,7 +39,6 @@ jobs:
       - uses: jjst/action-digitalocean-deploy-app@v2
         with:
           token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
-          app-id: ${{ secrets.DIGITALOCEAN_APP_ID }}
-          app_name: sea-turtle-app
+          app-id: sea-turtle-app
 
       - uses: actions/checkout@v2
