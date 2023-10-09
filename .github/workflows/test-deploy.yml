@@ -17,9 +17,9 @@ jobs:
       - name: Make envfile
         uses: SpicyPizza/create-envfile@v2.0
         with:
-          CI_ENVIRONMENT: development
-          app.baseURL: 'https://lobster-app-lq2l9.ondigitalocean.app/'
-          app_baseURL: 'https://lobster-app-lq2l9.ondigitalocean.app/'
+          CI_ENVIRONMENT: production
+          app.baseURL: 'https://example.ondigitalocean.app/'
+          app_baseURL: 'https://example.ondigitalocean.app/'
 
           database.default.hostname: 24.199.106.12
           database.default.database: efpem_lms
