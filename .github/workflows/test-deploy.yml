@@ -36,9 +36,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: jjst/action-digitalocean-deploy-app@v2
+      - name: DigitalOcean App Platform deployment
+        uses: digitalocean/app_action@v1.1.5
         with:
+          app_name: urchin-app
           token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
-          app-id: urchin-app-u8sx2
 
       - uses: actions/checkout@v2
