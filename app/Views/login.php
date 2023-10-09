@@ -6,6 +6,7 @@
   <input type="password" name="pass" required>
 
   <button type="submit">Ingresar</button>
+  Checked
 
   <?php if (!empty($msg)) : ?>
     <div>
