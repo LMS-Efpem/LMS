@@ -20,11 +20,19 @@ jobs:
         id: check_files
         uses: andstor/file-existence-action@v1
         with:
-          files: 'composer.json'
+          files: "composer.json"
 
       - name: Run composer update
         if: steps.check_files.outputs.files_exists == 'true'
-        run: composer update --no-interaction --no-progress
+        run: composer update
+
+      - uses: 1arp/create-a-file-action@0.3
+        with:
+          path: "./"
+          file: "foo.bar"
+          content: |
+            Hello
+            World
 
       - name: Add .env file
         run: |
