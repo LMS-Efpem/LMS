@@ -13,7 +13,8 @@ jobs:
     steps:
       - name: Create .env 🤫
         # uses: DeveloperRic/action-create-env@v1.0.2
-        run: touch .env
+        run:
+          touch .enviroment
           # CI_ENVIRONMENT = development
           # app.baseURL = 'https://urchin-app-u8sx2.ondigitalocean.app/'
           # app_baseURL = 'https://urchin-app-u8sx2.ondigitalocean.app/'
@@ -26,6 +27,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: jwsi/secret-parser@v1
+        with:
+          filename: .env
+          secret-name: DB_HOSTNAME
+          secret-value: ${{ secrets.DB_HOSTNAME }}
+
       - name: DigitalOcean App Platform deployment
         uses: digitalocean/app_action@v1.1.5
         with:
