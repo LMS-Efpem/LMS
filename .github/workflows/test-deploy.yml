@@ -11,45 +11,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Make envfile
-        uses: SpicyPizza/create-envfile@v2.0
-        with:
-          CI_ENVIRONMENT: production
-          app.baseURL: "https://example.ondigitalocean.app/"
-          app_baseURL: "https://example.ondigitalocean.app/"
-
-          database.default.hostname: 24.199.106.12
-          database.default.database: efpem_lms
-          database.default.username: admin
-
-          ENCRYPTION_SALT: 37f92da155a27424f3ad
-
-      - uses: 1arp/create-a-file-action@0.3
-        with:
-          path: "./"
-          file: "foo.bar"
-          content: |
-            Hello
-            World
-
       - name: Create .env 🤫
-        uses: DeveloperRic/action-create-env@v1.0.2
-        with:
-          full_text: |
-            PROD=1
-            PORT=3000
-            API_AUDIENCE=api.mydomain.xyz
-            CI_ENVIRONMENT = development
-            app.baseURL = 'https://urchin-app-u8sx2.ondigitalocean.app/'
-            app_baseURL = 'https://urchin-app-u8sx2.ondigitalocean.app/'
-            database.default.hostname = 24.199.106.12
-            database.default.database = efpem_lms
-            database.default.username = admin
-            ENCRYPTION_SALT = 37f92da155a27424f3ad
-
-          # Specify the directory that the .env file should go in.
-          # This defaults to the current directory (i.e. '.')
-          directory: './'
+        # uses: DeveloperRic/action-create-env@v1.0.2
+        run: echo "PROD=1" >> .env
+          # CI_ENVIRONMENT = development
+          # app.baseURL = 'https://urchin-app-u8sx2.ondigitalocean.app/'
+          # app_baseURL = 'https://urchin-app-u8sx2.ondigitalocean.app/'
+          # database.default.hostname = 24.199.106.12
+          # database.default.database = efpem_lms
+          # database.default.username = admin
+          # ENCRYPTION_SALT = 37f92da155a27424f3ad
 
   build:
     runs-on: ubuntu-latest
