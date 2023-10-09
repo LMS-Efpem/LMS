@@ -1,7 +1,4 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/actions
-
-name: Deploy site
+name: Deploy site on DigitalOcean App Platform
 
 on:
   push:
@@ -18,8 +15,8 @@ jobs:
         uses: SpicyPizza/create-envfile@v2.0
         with:
           CI_ENVIRONMENT: production
-          app.baseURL: 'https://example.ondigitalocean.app/'
-          app_baseURL: 'https://example.ondigitalocean.app/'
+          app.baseURL: "https://example.ondigitalocean.app/"
+          app_baseURL: "https://example.ondigitalocean.app/"
 
           database.default.hostname: 24.199.106.12
           database.default.database: efpem_lms
@@ -39,4 +36,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: jjst/action-digitalocean-deploy-app@v2
+        with:
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+          app-id: urchin-app-u8sx2
+
       - uses: actions/checkout@v2
