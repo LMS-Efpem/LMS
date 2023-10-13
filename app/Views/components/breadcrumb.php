@@ -1,7 +1,6 @@
-<ul class="breadcrumb">
-          <li class="breadcrumb-item">
-            <a href="">Inicio </a></li>
-          <li class="breadcrumb-item">
-            <a href="Perfiles">Perfiles</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Encargados</li>
-        </ul>
+<ul class="breadcrumb ms-5">
+  <li class="breadcrumb-item">
+    <a href="<?= base_url('/') ?>">Inicio</a>
+  </li>
+  <li class="breadcrumb-item active" aria-current="page">Perfiles</li>
+</ul>
