@@ -1,0 +1,55 @@
+{
+  "Perfiles": {
+    "Nacionalidad": {
+      "icon": "map",
+      "url": "/a/configuracion/nacionalidad"
+    },
+    "Estado Civil": {
+      "icon": "favorite",
+      "url": "/a/configuracion/estado-civil"
+    },
+    "Géneros": {
+      "icon": "wc",
+      "url": "/a/configuracion/genero"
+    },
+    "Parentescos": {
+      "icon": "escalator_warning",
+      "url": "/a/configuracion/parentesco"
+    }
+  },
+  "Asignaturas": {
+    "Asignaturas": {
+      "icon": "book_2",
+      "url": "/a/configuracion/asignatura"
+    },
+    "Niveles": {
+      "icon": "stairs",
+      "url": "/a/configuracion/niveles-academicos"
+    },
+    "Grados": {
+      "icon": "school",
+      "url": "/a/configuracion/grados"
+    },
+    "Unidades": {
+      "icon": "local_library",
+      "url": "/a/configuracion/unidades"
+    }
+  },
+  "Actividades": {
+    "Actividades": {
+      "icon": "task",
+      "title": "Actividades",
+      "url": "/a/configuracion/actividades"
+    },
+    "Tipos": {
+      "icon": "dataset",
+      "url": "/a/configuracion/tipos-actividades"
+    }
+  },
+  "Créditos": {
+    "Créditos": {
+      "icon": "military_tech",
+      "url": "/a/configuracion/creditos"
+    }
+  }
+}
