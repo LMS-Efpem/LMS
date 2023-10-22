@@ -21,6 +21,11 @@
             Carga Académica
           </a>
         </li>
+        <li class="nav-item">
+          <a href="<?= base_url('/a/configuracion') ?>" class="nav-link">
+            Configuración
+          </a>
+        </li>
       </ul>
     </div>
 
