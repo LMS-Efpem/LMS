@@ -17,7 +17,7 @@ class Config extends BaseController
     public function view_credits()
     {
         echo view($this->header, ['title' => 'Créditos']);
-        echo view('admin/config/credits');
+        echo view('admin/config/view_credits');
         echo view($this->footer);
     }
 }
