@@ -99,7 +99,7 @@ $data  = $model->findAll(); // SELECT * FROM unit
         <table class="table table-hover" id="dataTable">
           <thead>
             <tr class="table-light">
-              <th>ID</th>
+              <th style="width: 5rem;">ID</th>
               <th>Unidad</th>
               <th style="width: 5rem;">Acciones</th>
             </tr>
@@ -190,4 +190,4 @@ $data  = $model->findAll(); // SELECT * FROM unit
 <?php endif; ?>
 
 <!-- Funcionalidad Delete -->
-<script src="<?= base_url('/public/js/services/pointIdDelete.js') ?>"></script>
+<script src="<?= base_url('/public/js/services/selectIdDelete.js') ?>"></script>
