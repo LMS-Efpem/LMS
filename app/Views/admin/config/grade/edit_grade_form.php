@@ -1,9 +1,14 @@
 <?php
 
 use App\Models\Config\GradeModel;
+use App\Models\Config\LevelsModel;
 
 $model = new GradeModel();
-$unit  = $model->find($id);
+$levels_model = new LevelsModel();
+
+$levels = $levels_model->findAll(); // SELECT * FROM levels
+
+$grade  = $model->find($id); // SELECT * FROM grade WHERE id = $id
 ?>
 
 <!-- NAVBAR -->
@@ -93,10 +98,19 @@ $unit  = $model->find($id);
 
 <main class="m-auto" style="max-width: min(100%, 500px);">
   <form action="<?= base_url('/a/configuracion/grados/editar') ?>" method="post">
-    <input type="hidden" name="id" value="<?= $unit['id'] ?>">
+    <input type="hidden" name="id" value="<?= $grade['id'] ?>">
     <div class="my-3">
       <label for="grade_name" class="form-label">Nombre del grado <span class="text-danger">*</span></label>
-      <input type="text" class="form-control" id="grade_name" name="grade_name" value="<?= $unit['description'] ?>" required>
+      <input type="text" class="form-control" id="grade_name" name="grade_name" value="<?= $grade['description'] ?>" required>
+    </div>
+    <div class="mb-3">
+      <label for="level_name" class="form-label">Nivel del grado<span class="text-danger">*</span></label>
+      <select name="level_name" id="level_name" class="form-select" aria-label="Nivel de grado">
+        <option disabled>Selecciona un nivel</option>
+        <?php foreach ($levels as $level) : ?>
+          <option value="<?= $level['id'] ?>" <?= ($level['id'] === $grade['id_group'] ? 'selected' : '') ?> ><?= $level['description'] ?></option>
+        <?php endforeach; ?>
+      </select>
     </div>
     <div>
       <button type="submit" class="btn btn-warning">Guardar Cambios</button>

@@ -1,9 +1,13 @@
 <?php
 
 use App\Models\Config\GradeModel;
+use App\Models\Config\LevelsModel;
 
 $model = new GradeModel();
+$levels_model = new LevelsModel();
+
 $data  = $model->findAll(); // SELECT * FROM grade
+$levels = $levels_model->findAll(); // SELECT * FROM levels
 ?>
 
 <!-- NAVBAR -->
@@ -86,6 +90,13 @@ $data  = $model->findAll(); // SELECT * FROM grade
   <li class="breadcrumb-item active" aria-current="page">Grados</li>
 </ul>
 
+<details>
+  <summary>Levels</summary>
+  <pre>
+    <?php print_r($data) ?>
+  </pre>
+</details>
+
 <!-- TABLA -->
 <main class="mx-auto" style="max-width: 40rem;">
   <header class="d-flex justify-content-between align-items-center">
@@ -100,17 +111,19 @@ $data  = $model->findAll(); // SELECT * FROM grade
           <thead>
             <tr class="table-light">
               <th style="width: 5rem;">ID</th>
-              <th>Id Grupo</th>
               <th>Grados</th>
+              <th>Niveles</th>
               <th style="width: 5rem;">Acciones</th>
             </tr>
           </thead>
           <tbody class="table-group-divider">
-            <?php foreach ($data as $row) : ?>
+            <?php foreach ($data as $row) :
+              $level = $levels_model->where('id', $row['id_group'])->first();
+            ?>
               <tr>
                 <td><?= $row['id'] ?></td>
-                <td><?= $row['id_group'] ?></td>
                 <td><?= $row['description'] ?></td>
+                <td><?= $level['description'] ?></td>
                 <td class="d-flex gap-3">
                   <a href="<?= base_url('/a/configuracion/grados/editar/' . $row['id']) ?>" class="btn btn-outline-warning d-flex align-items-center justify-content-center" style="width: 2.5rem;">
                     <span class="material-symbols-rounded">
@@ -147,8 +160,13 @@ $data  = $model->findAll(); // SELECT * FROM grade
           <input class="form-control" id="grade_name" name="grade_name" placeholder="Nombre del grado" required>
         </div>
         <div class="mb-3">
-          <label for="grade_description" class="form-label">Descripción <span class="text-danger">*</span></label>
-          <input class="form-control" id="grade_description" name="grade_description" placeholder="Descripción del grado" required>
+          <label for="level_name" class="form-label">Nivel <span class="text-danger">*</span></label>
+          <select name="level_name" id="level_name" class="form-select" aria-label="Nivel de grado">
+            <option selected disabled>Selecciona un nivel</option>
+            <?php foreach ($levels as $level) : ?>
+              <option value="<?= $level['id'] ?>"><?= $level['description'] ?></option>
+            <?php endforeach; ?>
+          </select>
         </div>
       </div>
 

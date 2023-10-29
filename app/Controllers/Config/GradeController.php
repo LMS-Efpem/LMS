@@ -28,6 +28,7 @@ class GradeController extends BaseController
         $model = new GradeModel();
 
         $data = [
+            'id_group'    => $this->request->getVar('level_name'),
             'description' => $this->request->getVar('grade_name'),
         ];
 
@@ -52,6 +53,7 @@ class GradeController extends BaseController
 
         $id = $this->request->getVar('id');
         $data = [
+            'id_group'    => $this->request->getVar('level_name'),
             'description' => $this->request->getVar('grade_name'),
         ];
 
