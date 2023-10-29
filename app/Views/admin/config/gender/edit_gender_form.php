@@ -83,19 +83,19 @@ $unit  = $model->find($id);
   <li class="breadcrumb-item">
     <a href="<?= base_url('/a/configuracion') ?>">Configuración</a>
   </li>
-  <li class="breadcrumb-item active" aria-current="page">Genero</li>
+  <li class="breadcrumb-item active" aria-current="page">Géneros</li>
 </ul>
 
 <!-- FORMULARIO DE EDICIÓN -->
 <header class="m-5">
-  <h1>Genero</h1>
+  <h1>Géneros</h1>
 </header>
 
 <main class="m-auto" style="max-width: min(100%, 500px);">
   <form action="<?= base_url('/a/configuracion/genero/editar') ?>" method="post">
     <input type="hidden" name="id" value="<?= $unit['id'] ?>">
     <div class="my-3">
-      <label for="gender_name" class="form-label">Genero <span class="text-danger">*</span></label>
+      <label for="gender_name" class="form-label">Géneros<span class="text-danger">*</span></label>
       <input type="text" class="form-control" id="gender_name" name="gender_name" value="<?= $unit['description'] ?>" required>
     </div>
     <div>
