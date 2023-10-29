@@ -83,14 +83,14 @@ $data  = $model->findAll(); // SELECT * FROM unit
   <li class="breadcrumb-item">
     <a href="<?= base_url('/a/configuracion') ?>">Configuración</a>
   </li>
-  <li class="breadcrumb-item active" aria-current="page">Genero</li>
+  <li class="breadcrumb-item active" aria-current="page">Géneros</li>
 </ul>
 
 <!-- TABLA -->
 <main class="mx-auto" style="max-width: 40rem;">
   <header class="d-flex justify-content-between align-items-center">
-    <h1>Genero</h1>
-    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#create_modal">Crear Genero</button>
+    <h1>Géneros</h1>
+    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#create_modal">Crear Género</button>
   </header>
 
   <section>
@@ -100,7 +100,7 @@ $data  = $model->findAll(); // SELECT * FROM unit
           <thead>
             <tr class="table-light">
               <th style="width: 5rem;">ID</th>
-              <th>Genero</th>
+              <th>Género</th>
               <th style="width: 5rem;">Acciones</th>
             </tr>
           </thead>
@@ -135,13 +135,13 @@ $data  = $model->findAll(); // SELECT * FROM unit
   <form class="modal-dialog modal-dialog-scrollable" action="<?= base_url('/a/configuracion/genero/nuevo') ?>" method="post">
     <div class="modal-content">
       <div class="modal-header">
-        <h3 class="modal-title h5">Agregar Genero</h3>
+        <h3 class="modal-title h5">Agregar Género</h3>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
 
       <div class="modal-body">
         <div class="mb-3">
-          <label for="gender_name" class="form-label">Genero <span class="text-danger">*</span></label>
+          <label for="gender_name" class="form-label">Género <span class="text-danger">*</span></label>
           <input class="form-control" id="gender_name" name="gender_name" placeholder="Genero" required>
         </div>
         <div class="mb-3">
@@ -163,7 +163,7 @@ $data  = $model->findAll(); // SELECT * FROM unit
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h3 class="modal-title h5">Eliminar Geneo</h3>
+        <h3 class="modal-title h5">Eliminar Género</h3>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <form action="<?= base_url('/a/configuracion/genero/eliminar') ?>" method="post">
