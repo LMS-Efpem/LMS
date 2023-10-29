@@ -103,7 +103,7 @@ $routes->post('/a/configuracion/estado-civil/eliminar',           'Config\CivilS
 // Rutas de Género
 $routes->get('/a/configuracion/genero',                           'Config\GenderController::view_genders');
 $routes->post('/a/configuracion/genero/nuevo',                    'Config\GenderController::create_gender');
-$routes->get('/a/configuracion/genero/editar/(:num)',             'Config\GenderController::edit_gender_form');
+$routes->get('/a/configuracion/genero/editar/(:num)',             'Config\GenderController::edit_gender_form/$1');
 $routes->post('/a/configuracion/genero/editar',                   'Config\GenderController::edit_gender');
 $routes->post('/a/configuracion/genero/eliminar',                 'Config\GenderController::delete_gender');
 // Rutas de Parentesco
