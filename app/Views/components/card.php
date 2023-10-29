@@ -1,8 +1,8 @@
-<div class="container py-4">
-    <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
+<a href="<?= base_url('/') ?>" class="text-decoration-none" style="height: fit-content">
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Lorem Ipsum</h5>
+      <p class="card-text">Lorem ipsum</p>
     </div>
-      </div>
+  </div>
+</a>

@@ -1,3 +1,9 @@
+<?php
+// Listado de Integrantes
+$data = json_decode(file_get_contents(base_url('public/data/developers.json')), true);
+?>
+
+<!-- NAVBAR -->
 <nav class="navbar fixed-top navbar-expand bg-body-secondary">
   <div class="container-fluid">
     <div class="collapse navbar-collapse" id="navbarNav">
@@ -8,7 +14,7 @@
       <ul class="navbar-nav">
         <li class="nav-item">
           <a href="<?= base_url('/a/perfiles/') ?>" class="nav-link">
-            Perfil
+            Perfiles
           </a>
         </li>
         <li class="nav-item">
@@ -16,7 +22,7 @@
             Calificaciones
           </a>
         </li>
-        <li class="nav-item active">
+        <li class="nav-item">
           <a href="<?= base_url('/a/carga-academica/') ?>" class="nav-link">
             Carga Académica
           </a>
@@ -65,3 +71,48 @@
     </div>
   </div>
 </nav>
+
+<!-- BREADCRUMB -->
+<ul class="breadcrumb ms-5">
+  <li class="breadcrumb-item">
+    <a href="<?= base_url('/a/inicio') ?>">Inicio</a>
+  </li>
+  <li class="breadcrumb-item">
+    <a href="<?= base_url('/a/configuracion') ?>">Configuración</a>
+  </li>
+  <li class="breadcrumb-item active" aria-current="page">Créditos</li>
+</ul>
+
+<!-- TABLA -->
+<main class="mx-auto px-3" style="max-width: 40rem;">
+  <header>
+    <h1>Créditos</h1>
+  </header>
+
+  <section>
+    <div class="table-responsive">
+      <div class="table-wrapper">
+        <table class="table table-hover">
+          <thead>
+            <tr class="table-light">
+              <th style="width: 5rem;">No.</th>
+              <th>Nombre</th>
+              <th style="width: 10rem;">Carnet</th>
+            </tr>
+          </thead>
+          <tbody class="table-group-divider">
+            <?php foreach ($data as $key => $developers) : ?>
+              <?php foreach ($developers as $key => $developer) : ?>
+                <tr>
+                  <td><?= $key + 1 ?></td>
+                  <td><?= $developer['name'] ?></td>
+                  <td><?= $developer['carnet'] ?></td>
+                </tr>
+              <?php endforeach; ?>
+            <?php endforeach; ?>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</main>

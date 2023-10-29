@@ -1,3 +1,12 @@
+<?php
+
+use App\Models\Config\CivilStatusModel;
+
+$model = new CivilStatusModel();
+$status  = $model->find($id);
+?>
+
+<!-- NAVBAR -->
 <nav class="navbar fixed-top navbar-expand bg-body-secondary">
   <div class="container-fluid">
     <div class="collapse navbar-collapse" id="navbarNav">
@@ -16,13 +25,13 @@
             Calificaciones
           </a>
         </li>
-        <li class="nav-item active">
+        <li class="nav-item">
           <a href="<?= base_url('/a/carga-academica/') ?>" class="nav-link">
             Carga Académica
           </a>
         </li>
         <li class="nav-item">
-          <a href="<?= base_url('/a/configuracion') ?>" class="nav-link">
+          <a href="<?= base_url('/a/configuracion') ?>" class="nav-link active">
             Configuración
           </a>
         </li>
@@ -34,7 +43,7 @@
         <img src="
           <?= (session('picture'))
             ? base_url('/public/img/profile/' . session('role') . '/' . session('id') . '.png')
-            : base_url('/public/img/picture.png')
+            : base_url('/public/img/picture.svg')
           ?>" alt="Perfil" width="42" height="42">
       </button>
       <ul class="dropdown-menu dropdown-menu-end mt-3">
@@ -65,3 +74,33 @@
     </div>
   </div>
 </nav>
+
+<!-- BREADCRUMB -->
+<ul class="breadcrumb ms-5">
+  <li class="breadcrumb-item">
+    <a href="<?= base_url('/a/inicio') ?>">Inicio</a>
+  </li>
+  <li class="breadcrumb-item">
+    <a href="<?= base_url('/a/configuracion') ?>">Configuración</a>
+  </li>
+  <li class="breadcrumb-item active" aria-current="page">Estados Civiles</li>
+</ul>
+
+<!-- FORMULARIO DE EDICIÓN -->
+<header class="m-5">
+  <h1>Estados Civiles</h1>
+</header>
+
+<main class="m-auto" style="max-width: min(100%, 500px);">
+  <form action="<?= base_url('/a/configuracion/estado-civil/editar') ?>" method="post">
+    <input type="hidden" name="id" value="<?= $status['id'] ?>">
+    <div class="my-3">
+      <label for="civil_status" class="form-label">Nombre del Estado Civil <span class="text-danger">*</span></label>
+      <input type="text" class="form-control" id="civil_status" name="civil_status" value="<?= $status['description'] ?>" required>
+    </div>
+    <div>
+      <button type="submit" class="btn btn-warning">Guardar Cambios</button>
+      <a href="<?= base_url('/a/configuracion/estado-civil/') ?>" class="btn btn-secondary">Descartar</a>
+    </div>
+  </form>
+</main>

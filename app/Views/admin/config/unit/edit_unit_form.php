@@ -1,3 +1,12 @@
+<?php
+
+use App\Models\Config\UnitModel;
+
+$model = new UnitModel();
+$unit  = $model->find($id);
+?>
+
+<!-- NAVBAR -->
 <nav class="navbar fixed-top navbar-expand bg-body-secondary">
   <div class="container-fluid">
     <div class="collapse navbar-collapse" id="navbarNav">
@@ -16,13 +25,13 @@
             Calificaciones
           </a>
         </li>
-        <li class="nav-item active">
+        <li class="nav-item">
           <a href="<?= base_url('/a/carga-academica/') ?>" class="nav-link">
             Carga Académica
           </a>
         </li>
         <li class="nav-item">
-          <a href="<?= base_url('/a/configuracion') ?>" class="nav-link">
+          <a href="<?= base_url('/a/configuracion') ?>" class="nav-link active">
             Configuración
           </a>
         </li>
@@ -34,7 +43,7 @@
         <img src="
           <?= (session('picture'))
             ? base_url('/public/img/profile/' . session('role') . '/' . session('id') . '.png')
-            : base_url('/public/img/picture.png')
+            : base_url('/public/img/picture.svg')
           ?>" alt="Perfil" width="42" height="42">
       </button>
       <ul class="dropdown-menu dropdown-menu-end mt-3">
@@ -65,3 +74,33 @@
     </div>
   </div>
 </nav>
+
+<!-- BREADCRUMB -->
+<ul class="breadcrumb ms-5">
+  <li class="breadcrumb-item">
+    <a href="<?= base_url('/a/inicio') ?>">Inicio</a>
+  </li>
+  <li class="breadcrumb-item">
+    <a href="<?= base_url('/a/configuracion') ?>">Configuración</a>
+  </li>
+  <li class="breadcrumb-item active" aria-current="page">Unidades</li>
+</ul>
+
+<!-- FORMULARIO DE EDICIÓN -->
+<header class="m-5">
+  <h1>Unidades</h1>
+</header>
+
+<main class="m-auto" style="max-width: min(100%, 500px);">
+  <form action="<?= base_url('/a/configuracion/unidades/editar') ?>" method="post">
+    <input type="hidden" name="id" value="<?= $unit['id'] ?>">
+    <div class="my-3">
+      <label for="unit_name" class="form-label">Nombre de la unidad <span class="text-danger">*</span></label>
+      <input type="text" class="form-control" id="unit_name" name="unit_name" value="<?= $unit['description'] ?>" required>
+    </div>
+    <div>
+      <button type="submit" class="btn btn-warning">Guardar Cambios</button>
+      <a href="<?= base_url('/a/configuracion/unidades/') ?>" class="btn btn-secondary">Descartar</a>
+    </div>
+  </form>
+</main>
