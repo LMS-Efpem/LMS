@@ -1,8 +1,8 @@
 <?php
 
-use App\Models\Administrator\PostModel;
+use App\Models\News\Post;
 
-$model = new PostModel();
+$model = new Post();
 $data  = $model->findAll(); // SELECT * FROM post
 ?>
 
