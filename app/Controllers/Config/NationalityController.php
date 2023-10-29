@@ -30,7 +30,7 @@ class NationalityController extends BaseController
         $data = [
             'alpha2' => $this->request->getVar('nationality_cod1'),
             'alpha3' => $this->request->getVar('nationality_cod2'),
-            'name' => $this->request->getVar('nationality_name'),
+            'name'   => $this->request->getVar('nationality_name'),
         ];
 
         $msg = ($model->insert($data))
@@ -56,7 +56,7 @@ class NationalityController extends BaseController
         $data = [
             'alpha2' => $this->request->getVar('nationality_cod1'),
             'alpha3' => $this->request->getVar('nationality_cod2'),
-            'name' => $this->request->getVar('nationality_name'),
+            'name'   => $this->request->getVar('nationality_name'),
         ];
 
         $msg = ($model->update($id, $data))

@@ -149,16 +149,12 @@ $data  = $model->findAll(); // SELECT * FROM nationality
           <input class="form-control" id="nationality_cod1" name="nationality_cod1" placeholder="Código Alpha 1" required>
         </div>
         <div class="mb-3">
-          <label for="nationality_cod2" clCódigo Alpha 1 <span class="text-danger">*</span></label>
+          <label for="nationality_cod2" class="form-label">Código 2<span class="text-danger">*</span></label>
           <input class="form-control" id="nationality_cod2" name="nationality_cod2" placeholder="Código Alpha 2" required>
         </div>
         <div class="mb-3">
           <label for="nationality_name" class="form-label">Nacionalidad <span class="text-danger">*</span></label>
           <input class="form-control" id="nationality_name" name="nationality_name" placeholder="Nombre de la Nacionalidad" required>
-        </div>
-        <div class="mb-3">
-          <label for="nationality_description" class="form-label">Descripción <span class="text-danger">*</span></label>
-          <input class="form-control" id="nationality_description" name="nationality_description" placeholder="Descripción de la Nacionalidad" required>
         </div>
       </div>
 
