@@ -90,12 +90,7 @@ $levels = $levels_model->findAll(); // SELECT * FROM levels
   <li class="breadcrumb-item active" aria-current="page">Grados</li>
 </ul>
 
-<details>
-  <summary>Levels</summary>
-  <pre>
-    <?php print_r($data) ?>
-  </pre>
-</details>
+
 
 <!-- TABLA -->
 <main class="mx-auto" style="max-width: 40rem;">
