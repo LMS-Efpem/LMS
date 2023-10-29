@@ -83,12 +83,12 @@ $unit  = $model->find($id);
   <li class="breadcrumb-item">
     <a href="<?= base_url('/a/configuracion') ?>">Configuración</a>
   </li>
-  <li class="breadcrumb-item active" aria-current="page">Parentesco</li>
+  <li class="breadcrumb-item active" aria-current="page">Parentescos</li>
 </ul>
 
 <!-- FORMULARIO DE EDICIÓN -->
 <header class="m-5">
-  <h1>Parentesco</h1>
+  <h1>Parentescos</h1>
 </header>
 
 <main class="m-auto" style="max-width: min(100%, 500px);">

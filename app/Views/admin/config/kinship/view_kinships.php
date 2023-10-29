@@ -83,13 +83,13 @@ $data  = $model->findAll(); // SELECT * FROM unit
   <li class="breadcrumb-item">
     <a href="<?= base_url('/a/configuracion') ?>">Configuración</a>
   </li>
-  <li class="breadcrumb-item active" aria-current="page">Parentesco</li>
+  <li class="breadcrumb-item active" aria-current="page">Parentescos</li>
 </ul>
 
 <!-- TABLA -->
 <main class="mx-auto" style="max-width: 40rem;">
   <header class="d-flex justify-content-between align-items-center">
-    <h1>Parentesco</h1>
+    <h1>Parentescos</h1>
     <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#create_modal">Crear Parentesco</button>
   </header>
 
@@ -163,7 +163,7 @@ $data  = $model->findAll(); // SELECT * FROM unit
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h3 class="modal-title h5">Eliminar Parentesco</h3>
+        <h3 class="modal-title h5">Eliminar Parentescos</h3>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <form action="<?= base_url('/a/configuracion/parentesco/eliminar') ?>" method="post">
