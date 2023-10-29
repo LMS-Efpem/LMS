@@ -3,8 +3,16 @@
 use App\Models\News\Post;
 
 $model = new Post();
-$news = $model->where('id', $id_new)->first();
+$news = $model->where('id', $id_new)->first(); // SELECT * FROM `post` WHERE `id` = $id_new LIMIT 1
 ?>
+
+<style>
+  main {
+    margin-inline: auto;
+    width: 100%;
+    max-width: 50rem;
+  }
+</style>
 
 <!-- NAVBAR -->
 <nav class="navbar fixed-top navbar-expand bg-body-secondary">
@@ -31,7 +39,7 @@ $news = $model->where('id', $id_new)->first();
           </a>
         </li>
         <li class="nav-item">
-          <a href="<?= base_url('/a/configuracion') ?>" class="nav-link active">
+          <a href="<?= base_url('/a/configuracion') ?>" class="nav-link">
             Configuración
           </a>
         </li>
@@ -80,40 +88,43 @@ $news = $model->where('id', $id_new)->first();
   <li class="breadcrumb-item">
     <a href="<?= base_url('/a/inicio') ?>">Inicio</a>
   </li>
-  <li class="breadcrumb-item active" aria-current="page">Noticias</li>
+  <li class="breadcrumb-item active" aria-current="page">Noticia</li>
 </ul>
 
-
-
-<style>
-  .card-notice:hover {
-    background-color: #ddd3;
-  }
-</style>
-
-
-<main class="mx-auto" style="max-width: 35rem;">
-  <header class="d-flex justify-content-between align-items-center">
-    <div class="d-flex justify-content-start">
-      <h1 class="card-title">Título</h1>
-    </div>
-    <div class="d-grid gap-1 d-md-flex justify-content-md-end">
-      <a href="<?= base_url('/a/noticia' . $id_new . '/editar') ?>"> <button class="btn btn-secondary " type="button"> Editar </button> </a>
-      <a href="<?= base_url('/a/noticia' . $id_new . '/d') ?>"> <button class="btn btn-danger" type="button">Eliminar</button> </a>
+<!-- Noticia -->
+<main class="p-3">
+  <header class="d-flex justify-content-between flex-wrap mb-4">
+    <h1><?= $news['title'] ?></h1>
+    <div>
+      <a href="<?= base_url('/a/noticia/editar/' . $id_new) ?>" class="btn btn-secondary">Editar</a>
+      <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete_modal">Eliminar</button>
     </div>
   </header>
 
-  <div class="card card-notice" style="
-    width: 35rem;
-    height: 25rem;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 4;
-    overflow: hidden;
-    ">
-    <div class="card-body">
-      <p class="card-text this-one">Descripción</p>
+  <?php $description_lines = explode("\n", $news['description']);
+  foreach ($description_lines as $line) : ?>
+    <p style='font-weight: 600; font-size: large;'><?= $line ?></p>
+  <?php endforeach; ?>
+</main>
+<!-- Modal ELiminar noticia -->
+<div class="modal fade " id="delete_modal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title h5">Eliminar Noticia</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>¿Estás seguro que desea eliminar esta noticia?</p>
+        <p class="text-secondary">Esta acción no puede deshacerse.</p>
+      </div>
+      <div class="modal-footer">
+        <form action="<?= base_url('/a/noticia/eliminar') ?>" method="post">
+          <input type="hidden" name="id" value="<?= $id_new ?>" />
+          <button type="submit" class="btn btn-danger">Eliminar</button>
+        </form>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Descartar</button>
+      </div>
     </div>
   </div>
-
-</main>
+</div>

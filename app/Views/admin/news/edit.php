@@ -1,8 +1,18 @@
 <?php
-// Listado de Integrantes
-$data = json_decode(file_get_contents(base_url('public/data/developers.json')), true);
+
+use App\Models\News\Post;
+
+$model   = new Post();
+$notice  = $model->where('id', $id_new)->first(); // SELECT * FROM `post` WHERE `id` = $id_new LIMIT 1
 ?>
 
+<style>
+  main {
+    margin-inline: auto;
+    width: 100%;
+    max-width: 50rem;
+  }
+</style>
 <!-- NAVBAR -->
 <nav class="navbar fixed-top navbar-expand bg-body-secondary">
   <div class="container-fluid">
@@ -14,7 +24,7 @@ $data = json_decode(file_get_contents(base_url('public/data/developers.json')), 
       <ul class="navbar-nav">
         <li class="nav-item">
           <a href="<?= base_url('/a/perfiles/') ?>" class="nav-link">
-            Perfiles
+            Perfil
           </a>
         </li>
         <li class="nav-item">
@@ -77,42 +87,29 @@ $data = json_decode(file_get_contents(base_url('public/data/developers.json')), 
   <li class="breadcrumb-item">
     <a href="<?= base_url('/a/inicio') ?>">Inicio</a>
   </li>
-  <li class="breadcrumb-item">
-    <a href="<?= base_url('/a/configuracion') ?>">Configuración</a>
-  </li>
-  <li class="breadcrumb-item active" aria-current="page">Créditos</li>
+  <li class="breadcrumb-item active" aria-current="page">Noticia</li>
 </ul>
 
-<!-- TABLA -->
-<main class="mx-auto px-3" style="max-width: 40rem;">
-  <header>
-    <h1>Créditos</h1>
-  </header>
-
-  <section>
-    <div class="table-responsive">
-      <div class="table-wrapper">
-        <table class="table table-hover">
-          <thead>
-            <tr class="table-light">
-              <th style="width: 5rem;">No.</th>
-              <th>Nombre</th>
-              <th style="width: 10rem;">Carnet</th>
-            </tr>
-          </thead>
-          <tbody class="table-group-divider">
-            <?php foreach ($data as $developers) : ?>
-              <?php foreach ($developers as $key => $developer) : ?>
-                <tr>
-                  <td><?= $key + 1 ?></td>
-                  <td><?= $developer['name'] ?></td>
-                  <td><?= $developer['carnet'] ?></td>
-                </tr>
-              <?php endforeach; ?>
-            <?php endforeach; ?>
-          </tbody>
-        </table>
+<!-- Formulario editar registro -->
+<main class="p-3">
+  <form action="<?= base_url('/a/noticia/editar') ?>" method="post">
+    <input type="hidden" name="id" value="<?= $id_new ?>" />
+    <header class="d-flex justify-content-between align-items-center flex-wrap pb-5">
+      <input type="text" class="form-control fs-4 w-50" name="txt_title" placeholder="Título de la noticia" value="<?= $notice['title'] ?>" required tabindex="1" autofocus>
+      <div class="mt-3">
+        <button type="submit" class="btn btn-primary" tabindex="3">Guardar Cambios</button>
+        <a href="<?= base_url('/a/noticia/' . $id_new) ?>" class="btn btn-secondary" tabindex="4">Descartar</a>
       </div>
-    </div>
-  </section>
+    </header>
+
+    <section>
+      <textarea id="content-description" name="txt_description" class="form-control" placeholder="Escriba aquí el cuerpo de la noticia..." value="<?= $notice['description'] ?>" required style="height: max(40vh, 10rem);" tabindex="2"></textarea>
+    </section>
+  </form>
 </main>
+
+<!-- Contenido de Textarea -->
+<script>
+  // Selecciona el primer elemento 'textarea' y le asigna el string del contenido de la noticia
+  document.getElementsByTagName('textarea')[0].value = `<?= $notice['description'] ?>`;
+</script>

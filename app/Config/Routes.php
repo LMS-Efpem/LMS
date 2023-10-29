@@ -22,51 +22,51 @@ $routes->get('/recuperar', 'Auth::recover');
 ###############################################################################################
 $routes->get('/a/inicio', 'Admin::main');
 // Rutas de Noticias
-$routes->get('/a/noticia/nuevo',                           'Admin::create_new_form');
-$routes->post('/a/noticia/nuevo',                          'Admin::create_new');
-$routes->get('/a/noticia/(:segment)',                      'Admin::view_new/$1');
-$routes->get('/a/noticia/(:segment)/editar',               'Admin::edit_new/$1');
-$routes->post('/a/noticia/editar',                         'Admin::edit_new');
-$routes->post('/a/noticia/d',                              'Admin::delete_new');
+$routes->get('/a/noticia/nuevo',                                     'Admin::create_new_form');
+$routes->post('/a/noticia/nuevo',                                    'Admin::create_new');
+$routes->get('/a/noticia/(:num)',                                    'Admin::view_new/$1');
+$routes->get('/a/noticia/editar/(:num)',                             'Admin::edit_new_form/$1');
+$routes->post('/a/noticia/editar',                                   'Admin::edit_new');
+$routes->post('/a/noticia/eliminar',                                 'Admin::delete_new');
 // Rutas de Perfiles
-$routes->get('/a/perfiles/',                               'Admin::profiles/');
-$routes->get('/a/perfiles/encargados/',                    'Admin::parents/');
-$routes->get('/a/perfiles/docentes/',                      'Admin::teachers/');
+$routes->get('/a/perfiles/',                                         'Admin::profiles/');
+$routes->get('/a/perfiles/encargados/',                              'Admin::parents/');
+$routes->get('/a/perfiles/docentes/',                                'Admin::teachers/');
 // Rutas de Perfil de estudiante
-$routes->get('/a/perfil/estudia nte/nuevo',                'Admin::create_student_form');
-$routes->post('/a/perfil/estudiante/nuevo',                'Admin::create_student');
-$routes->get('/a/perfil/estudiante/(:segment)',            'Admin::view_student/$1');
-$routes->get('/a/perfil/estudiante/(:segment)/editar',     'Admin::edit_student_form/$1');
-$routes->post('/a/perfil/estudiante/editar',               'Admin::edit_student');
-$routes->post('/a/perfil/estudiante/eliminar',             'Admin::delete_student');
+$routes->get('/a/perfil/estudia nte/nuevo',                          'Admin::create_student_form');
+$routes->post('/a/perfil/estudiante/nuevo',                          'Admin::create_student');
+$routes->get('/a/perfil/estudiante/(:segment)',                      'Admin::view_student/$1');
+$routes->get('/a/perfil/estudiante/(:segment)/editar',               'Admin::edit_student_form/$1');
+$routes->post('/a/perfil/estudiante/editar',                         'Admin::edit_student');
+$routes->post('/a/perfil/estudiante/eliminar',                       'Admin::delete_student');
 // Rutas de Perfil de encargado
-$routes->get('/a/perfil/encargado/nuevo',                  'Admin::create_parent_form');
-$routes->post('/a/perfil/encargado/nuevo',                 'Admin::create_parent');
-$routes->get('/a/perfil/encargado/(:segment)',             'Admin::view_parent/$1');
-$routes->get('/a/perfil/encargado/(:segment)/editar',      'Admin::edit_parent_form/$1');
-$routes->post('/a/perfil/encargado/editar',                'Admin::edit_parent');
-$routes->post('/a/perfil/encargado/eliminar',              'Admin::delete_parent');
+$routes->get('/a/perfil/encargado/nuevo',                            'Admin::create_parent_form');
+$routes->post('/a/perfil/encargado/nuevo',                           'Admin::create_parent');
+$routes->get('/a/perfil/encargado/(:segment)',                       'Admin::view_parent/$1');
+$routes->get('/a/perfil/encargado/(:segment)/editar',                'Admin::edit_parent_form/$1');
+$routes->post('/a/perfil/encargado/editar',                          'Admin::edit_parent');
+$routes->post('/a/perfil/encargado/eliminar',                        'Admin::delete_parent');
 // Rutas de Perfil de docente
-$routes->get('/a/perfil/docente/nuevo',                    'Admin::create_teacher_form');
-$routes->post('/a/perfil/docente/nuevo',                   'Admin::create_teacher');
-$routes->get('/a/perfil/docente/(:segment)',               'Admin::view_teacher/$1');
-$routes->get('/a/perfil/docente/(:segment)/editar',        'Admin::edit_teacher_form/$1');
-$routes->post('/a/perfil/docente/editar',                  'Admin::edit_teacher');
-$routes->post('/a/perfil/docente/eliminar',                'Admin::delete_teacher');
+$routes->get('/a/perfil/docente/nuevo',                              'Admin::create_teacher_form');
+$routes->post('/a/perfil/docente/nuevo',                             'Admin::create_teacher');
+$routes->get('/a/perfil/docente/(:segment)',                         'Admin::view_teacher/$1');
+$routes->get('/a/perfil/docente/(:segment)/editar',                  'Admin::edit_teacher_form/$1');
+$routes->post('/a/perfil/docente/editar',                            'Admin::edit_teacher');
+$routes->post('/a/perfil/docente/eliminar',                          'Admin::delete_teacher');
 // Rutas de Perfil de administrador
-$routes->get('/a/perfil/administrador/nuevo',              'Admin::create_admin_form');
-$routes->post('/a/perfil/administrador/nuevo',             'Admin::create_admin');
-$routes->get('/a/perfil/administrador/(:segment)',         'Admin::view_admin/$1');
-$routes->get('/a/perfil/administrador/(:segment)/editar',  'Admin::edit_admin_form/$1');
-$routes->post('/a/perfil/administrador/editar',            'Admin::edit_admin');
-$routes->post('/a/perfil/administrador/eliminar',          'Admin::delete_admin');
+$routes->get('/a/perfil/administrador/nuevo',                        'Admin::create_admin_form');
+$routes->post('/a/perfil/administrador/nuevo',                       'Admin::create_admin');
+$routes->get('/a/perfil/administrador/(:segment)',                   'Admin::view_admin/$1');
+$routes->get('/a/perfil/administrador/(:segment)/editar',            'Admin::edit_admin_form/$1');
+$routes->post('/a/perfil/administrador/editar',                      'Admin::edit_admin');
+$routes->post('/a/perfil/administrador/eliminar',                    'Admin::delete_admin');
 // Rutas para notas
-$routes->get('/a/notas/',                                  'Admin::notes_panel/');
-$routes->get('/a/notas/(:segment)/(:segment)/',            'Admin::signatures/$1$2');
-$routes->get('/a/notas/(:segment)/(:segment)/(:segment)/', 'Admin::notes/$1$2$3');
+$routes->get('/a/notas/',                                            'Admin::notes_panel/');
+$routes->get('/a/notas/(:segment)/(:segment)/(:segment)',            'Admin::signatures/$1/$2/$3');
+$routes->get('/a/notas/(:segment)/(:segment)/(:segment)/(:segment)', 'Admin::notes/$1/$2/$3/$4');
 // Rutas para carga académica
-$routes->get('/a/carga-academica/',                        'Admin::academic/');
-$routes->get('/a/carga-academica/(:segment)/(:segment)',   'Admin::students/$1$2');
+$routes->get('/a/carga-academica/',                                  'Admin::academic/');
+$routes->get('/a/carga-academica/(:segment)/(:segment)',             'Admin::students/$1/$2/$3');
 
 ###############################################################################################
 # RUTAS DE ENCARGADO
