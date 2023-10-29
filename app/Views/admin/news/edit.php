@@ -103,7 +103,7 @@ $notice  = $model->where('id', $id_new)->first(); // SELECT * FROM `post` WHERE 
     </header>
 
     <section>
-      <textarea id="content-description" name="txt_description" class="form-control" placeholder="Escriba aquí el cuerpo de la noticia..." value="<?= $notice['description'] ?>" required style="height: max(40vh, 10rem);" tabindex="2"></textarea>
+      <textarea id="content-description" name="txt_description" class="form-control" placeholder="Escriba aquí el cuerpo de la noticia..." required style="height: max(40vh, 10rem);" tabindex="2"></textarea>
     </section>
   </form>
 </main>
