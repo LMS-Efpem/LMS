@@ -14,10 +14,10 @@ class Admin extends BaseController
         echo view($this->footer);
     }
 
-    public function view_news($id_new)
+    public function view_new($id_new)
     {
-        echo view($this->header, ['title' => 'Noticia']);
-        echo view('admin/news/main');
+        echo view($this->header, ['title' => 'Noticias']);
+        echo view('admin/news/main', ['id_new' => $id_new]);
         echo view($this->footer);
     }
 
