@@ -40,7 +40,7 @@ $settings = json_decode(file_get_contents(base_url('public/data/settings.json'))
         <img src="
           <?= (session('picture'))
             ? base_url('/public/img/profile/' . session('role') . '/' . session('id') . '.png')
-            : base_url('/public/img/picture.png')
+            : base_url('/public/img/picture.svg')
           ?>" alt="Perfil" width="42" height="42">
       </button>
       <ul class="dropdown-menu dropdown-menu-end mt-3">

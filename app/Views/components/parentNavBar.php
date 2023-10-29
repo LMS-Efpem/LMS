@@ -7,22 +7,22 @@
 
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a href="<?= base_url('/a/perfiles/') ?>" class="nav-link">
-            Perfil
+          <a href="<?= base_url('/p/perfiles/') ?>" class="nav-link">
+            Perfiles
           </a>
         </li>
         <li class="nav-item">
-          <a href="<?= base_url('/a/notas/') ?>" class="nav-link">
+          <a href="<?= base_url('/p/notas/') ?>" class="nav-link">
             Calificaciones
           </a>
         </li>
         <li class="nav-item active">
-          <a href="<?= base_url('/a/carga-academica/') ?>" class="nav-link">
+          <a href="<?= base_url('/p/carga-academica/') ?>" class="nav-link">
             Carga Académica
           </a>
         </li>
         <li class="nav-item">
-          <a href="<?= base_url('/a/configuracion') ?>" class="nav-link">
+          <a href="<?= base_url('/p/configuracion') ?>" class="nav-link">
             Configuración
           </a>
         </li>

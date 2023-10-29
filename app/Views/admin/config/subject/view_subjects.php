@@ -43,7 +43,7 @@ $data  = $model->findAll(); // SELECT * FROM SUBJECT
         <img src="
           <?= (session('picture'))
             ? base_url('/public/img/profile/' . session('role') . '/' . session('id') . '.png')
-            : base_url('/public/img/picture.png')
+            : base_url('/public/img/picture.svg')
           ?>" alt="Perfil" width="42" height="42">
       </button>
       <ul class="dropdown-menu dropdown-menu-end mt-3">
