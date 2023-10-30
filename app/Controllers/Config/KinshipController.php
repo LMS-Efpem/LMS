@@ -56,8 +56,8 @@ class KinshipController extends BaseController
         ];
 
         $msg = ($model->update($id, $data))
-        ? 'Parentesco creado exitosamente'
-        : 'No se pudo crear parentesco';
+        ? 'Parentesco editado exitosamente'
+        : 'No se pudo editar parentesco';
 
         return redirect()->to(base_url('/a/configuracion/parentesco'))->with('msg', $msg);
     }
@@ -70,8 +70,8 @@ class KinshipController extends BaseController
         $id = $this->request->getVar('id');
 
         $msg = ($model->delete($id))
-        ? 'Parentesco creado exitosamente'
-        : 'No se pudo crear parentesco';
+        ? 'Parentesco eliminado exitosamente'
+        : 'No se pudo eliminar parentesco';
 
         return redirect()->to(base_url('/a/configuracion/parentesco'))->with('msg', $msg);
     }

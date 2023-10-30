@@ -56,7 +56,7 @@ class GenderController extends BaseController
         ];
 
         $msg = ($model->update($id, $data))
-            ? 'Genero actualizada exitosamente'
+            ? 'Genero actualizado exitosamente'
             : 'No se pudo actualizar el Genero';
 
         return redirect()->to(base_url('/a/configuracion/genero'))->with('msg', $msg);
@@ -70,8 +70,8 @@ class GenderController extends BaseController
         $id = $this->request->getVar('id');
 
         $msg = ($model->delete($id))
-        ? 'Genero actualizada exitosamente'
-        : 'No se pudo actualizar el Genero';
+        ? 'Genero eliminado exitosamente'
+        : 'No se pudo eliminar el Genero';
 
         return redirect()->to(base_url('/a/configuracion/genero'))->with('msg', $msg);
     }
