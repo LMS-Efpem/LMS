@@ -28,7 +28,8 @@ class SubjectController extends BaseController
         $model = new SubjectModel();
 
         $data = [
-            'description' => $this->request->getVar('subject_name'),
+            'name'        => $this->request->getVar('subject_name'),
+            'description' => $this->request->getVar('subject_description'),
         ];
 
         $msg = ($model->insert($data))
@@ -52,7 +53,8 @@ class SubjectController extends BaseController
 
         $id = $this->request->getVar('id');
         $data = [
-            'description' => $this->request->getVar('subject_name'),
+            'name'        => $this->request->getVar('subject_name'),
+            'description' => $this->request->getVar('subject_description'),
         ];
 
         $msg = ($model->update($id, $data))
