@@ -3,7 +3,7 @@
 use App\Models\Config\SubjectModel;
 
 $model = new SubjectModel();
-$unit  = $model->find($id);
+$subject  = $model->find($id);
 ?>
 
 <!-- NAVBAR -->
@@ -92,15 +92,19 @@ $unit  = $model->find($id);
 </header>
 
 <main class="m-auto" style="max-width: min(100%, 500px);">
-  <form action="<?= base_url('/a/configuracion/asignatura/editar/') ?>" method="post">
+  <form action="<?= base_url('/a/configuracion/asignatura/editar') ?>" method="post">
     <input type="hidden" name="id" value="<?= $subject['id'] ?>">
     <div class="my-3">
       <label for="subject_name" class="form-label">Nombre de la asignatura <span class="text-danger">*</span></label>
-      <input type="text" class="form-control" id="subject_name" name="subject_name" value="<?= $subject['description'] ?>" required>
+      <input type="text" class="form-control" id="subject_name" name="subject_name" value="<?= $subject['name'] ?>" required>
+    </div>
+    <div class="my-3">
+      <label for="subject_description" class="form-label">Descripción de la asignatura: <span class="text-danger">*</span></label>
+      <input type="text" class="form-control" id="subject_description" name="subject_description" value="<?= $subject['description'] ?>" required>
     </div>
     <div>
       <button type="submit" class="btn btn-warning">Guardar Cambios</button>
-      <a href="<?= base_url('/a/configuracion/asignaturas/') ?>" class="btn btn-secondary">Descartar</a>
+      <a href="<?= base_url('/a/configuracion/asignatura/') ?>" class="btn btn-secondary">Descartar</a>
     </div>
   </form>
 </main>
